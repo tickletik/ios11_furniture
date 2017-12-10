@@ -6,9 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Furniture TablcVC Table View Controller-->
         <scene sceneID="b5X-sj-xG8">
@@ -65,12 +71,31 @@
                                     <barButtonItem systemItem="action" id="zsI-Bn-o6T"/>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPd-tb-wDD">
+                                <rect key="frame" x="16" y="80" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EPd-tb-wDD" secondAttribute="height" multiplier="1:1" id="YPe-67-7oo"/>
+                                </constraints>
+                                <state key="normal" title="Choose Photo"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Furniture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uw0-du-bF6">
+                                <rect key="frame" x="0.0" y="431" width="375" height="37"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MhO-Nb-I2t" firstAttribute="leading" secondItem="48W-mh-pYG" secondAttribute="leading" id="09j-vT-fXC"/>
+                            <constraint firstItem="EPd-tb-wDD" firstAttribute="top" secondItem="48W-mh-pYG" secondAttribute="top" constant="16" id="0zV-M6-Udv"/>
+                            <constraint firstItem="uw0-du-bF6" firstAttribute="top" secondItem="EPd-tb-wDD" secondAttribute="bottom" constant="8" id="GAK-kn-Xxg"/>
                             <constraint firstItem="MhO-Nb-I2t" firstAttribute="bottom" secondItem="48W-mh-pYG" secondAttribute="bottom" id="PzH-6V-D5X"/>
+                            <constraint firstItem="48W-mh-pYG" firstAttribute="trailing" secondItem="uw0-du-bF6" secondAttribute="trailing" id="Uaj-Da-lv9"/>
+                            <constraint firstItem="EPd-tb-wDD" firstAttribute="leading" secondItem="48W-mh-pYG" secondAttribute="leading" constant="16" id="Vov-Jw-IAi"/>
+                            <constraint firstItem="uw0-du-bF6" firstAttribute="leading" secondItem="48W-mh-pYG" secondAttribute="leading" id="noX-AM-i9s"/>
                             <constraint firstItem="MhO-Nb-I2t" firstAttribute="trailing" secondItem="48W-mh-pYG" secondAttribute="trailing" id="sC1-lP-V51"/>
+                            <constraint firstItem="48W-mh-pYG" firstAttribute="trailing" secondItem="EPd-tb-wDD" secondAttribute="trailing" constant="16" id="tI3-DE-yrr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="48W-mh-pYG"/>
                     </view>
