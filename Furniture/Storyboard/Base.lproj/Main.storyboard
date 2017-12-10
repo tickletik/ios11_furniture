@@ -58,7 +58,20 @@
                     <view key="view" contentMode="scaleToFill" id="bsv-sh-2l8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhO-Nb-I2t">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="zsI-Bn-o6T"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MhO-Nb-I2t" firstAttribute="leading" secondItem="48W-mh-pYG" secondAttribute="leading" id="09j-vT-fXC"/>
+                            <constraint firstItem="MhO-Nb-I2t" firstAttribute="bottom" secondItem="48W-mh-pYG" secondAttribute="bottom" id="PzH-6V-D5X"/>
+                            <constraint firstItem="MhO-Nb-I2t" firstAttribute="trailing" secondItem="48W-mh-pYG" secondAttribute="trailing" id="sC1-lP-V51"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="48W-mh-pYG"/>
                     </view>
                 </viewController>
