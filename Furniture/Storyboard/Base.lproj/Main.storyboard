@@ -35,6 +35,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cv4-TC-R5P" kind="show" identifier="ToFurnitureDetail" id="yS3-zK-CVd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
