@@ -43,7 +43,7 @@ class FurnitureDetailVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        <#code#>
+        dismiss(animated: true, completion: nil)
     }
     
 
