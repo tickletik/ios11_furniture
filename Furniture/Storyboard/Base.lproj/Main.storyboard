@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="632" y="83"/>
         </scene>
-        <!--View Controller-->
+        <!--Furniture DetailVC-->
         <scene sceneID="CXf-r7-GCO">
             <objects>
-                <viewController id="cv4-TC-R5P" sceneMemberID="viewController">
+                <viewController id="cv4-TC-R5P" customClass="FurnitureDetailVC" customModule="Furniture" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bsv-sh-2l8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhO-Nb-I2t">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="zsI-Bn-o6T"/>
+                                    <barButtonItem systemItem="action" id="zsI-Bn-o6T">
+                                        <connections>
+                                            <action selector="actionButtonTapped:" destination="cv4-TC-R5P" id="DfU-cT-rh7"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPd-tb-wDD">
@@ -77,10 +81,19 @@
                                     <constraint firstAttribute="width" secondItem="EPd-tb-wDD" secondAttribute="height" multiplier="1:1" id="YPe-67-7oo"/>
                                 </constraints>
                                 <state key="normal" title="Choose Photo"/>
+                                <connections>
+                                    <action selector="choosePhotoButtonTapped:" destination="cv4-TC-R5P" eventType="touchUpInside" id="aDh-rf-12q"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Furniture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uw0-du-bF6">
-                                <rect key="frame" x="0.0" y="431" width="375" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Furniture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uw0-du-bF6" userLabel="Furniture Title Label">
+                                <rect key="frame" x="16" y="431" width="359" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zej-Vs-gMh" userLabel="Furniture Description Label">
+                                <rect key="frame" x="16" y="476" width="359" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -91,14 +104,22 @@
                             <constraint firstItem="EPd-tb-wDD" firstAttribute="top" secondItem="48W-mh-pYG" secondAttribute="top" constant="16" id="0zV-M6-Udv"/>
                             <constraint firstItem="uw0-du-bF6" firstAttribute="top" secondItem="EPd-tb-wDD" secondAttribute="bottom" constant="8" id="GAK-kn-Xxg"/>
                             <constraint firstItem="MhO-Nb-I2t" firstAttribute="bottom" secondItem="48W-mh-pYG" secondAttribute="bottom" id="PzH-6V-D5X"/>
+                            <constraint firstItem="48W-mh-pYG" firstAttribute="trailing" secondItem="zej-Vs-gMh" secondAttribute="trailing" id="S2K-vE-t5r"/>
                             <constraint firstItem="48W-mh-pYG" firstAttribute="trailing" secondItem="uw0-du-bF6" secondAttribute="trailing" id="Uaj-Da-lv9"/>
                             <constraint firstItem="EPd-tb-wDD" firstAttribute="leading" secondItem="48W-mh-pYG" secondAttribute="leading" constant="16" id="Vov-Jw-IAi"/>
-                            <constraint firstItem="uw0-du-bF6" firstAttribute="leading" secondItem="48W-mh-pYG" secondAttribute="leading" id="noX-AM-i9s"/>
+                            <constraint firstItem="zej-Vs-gMh" firstAttribute="top" secondItem="uw0-du-bF6" secondAttribute="bottom" constant="8" id="hMh-5L-X2m"/>
+                            <constraint firstItem="zej-Vs-gMh" firstAttribute="leading" secondItem="48W-mh-pYG" secondAttribute="leading" constant="16" id="laz-4a-wlN"/>
+                            <constraint firstItem="uw0-du-bF6" firstAttribute="leading" secondItem="48W-mh-pYG" secondAttribute="leading" constant="16" id="noX-AM-i9s"/>
                             <constraint firstItem="MhO-Nb-I2t" firstAttribute="trailing" secondItem="48W-mh-pYG" secondAttribute="trailing" id="sC1-lP-V51"/>
                             <constraint firstItem="48W-mh-pYG" firstAttribute="trailing" secondItem="EPd-tb-wDD" secondAttribute="trailing" constant="16" id="tI3-DE-yrr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="48W-mh-pYG"/>
                     </view>
+                    <connections>
+                        <outlet property="choosePhotoButton" destination="EPd-tb-wDD" id="Inm-BM-gCZ"/>
+                        <outlet property="furnitureDescriptionLabel" destination="zej-Vs-gMh" id="2GL-Ed-REH"/>
+                        <outlet property="furnitureTitleLabel" destination="uw0-du-bF6" id="482-hI-a7b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ox0-lY-dIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
