@@ -39,6 +39,9 @@ class FurnitureDetailVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @IBAction func choosePhotoButtonTapped(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
