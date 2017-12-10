@@ -38,6 +38,15 @@ class FurnitureDetailVC: UIViewController, UIImagePickerControllerDelegate, UINa
         furnitureDescriptionLabel.text = furniture.description
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        <#code#>
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        <#code#>
+    }
+    
+
     @IBAction func choosePhotoButtonTapped(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
