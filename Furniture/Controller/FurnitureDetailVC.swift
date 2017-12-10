@@ -39,7 +39,7 @@ class FurnitureDetailVC: UIViewController {
     }
     
     @IBAction func choosePhotoButtonTapped(_ sender: Any) {
-        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     }
     
     @IBAction func actionButtonTapped(_ sender: Any) {
