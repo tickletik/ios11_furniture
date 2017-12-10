@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FurnitureDetailVC: UIViewController {
+class FurnitureDetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var furniture: Furniture?
     
