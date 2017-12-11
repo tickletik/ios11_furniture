@@ -84,8 +84,16 @@ class FurnitureDetailVC: UIViewController, UIImagePickerControllerDelegate, UINa
         
     }
     
-    @IBAction func actionButtonTapped(_ sender: Any) {
+    @IBAction func actionButtonTapped(_ sender: UIButton) {
         
+        if let imageData = furniture?.imageData, let image = UIImage(data: imageData) {
+            
+            let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            
+            activityController.popoverPresentationController?.sourceView = sender
+            
+            present(activityController, animated: true, completion: nil)
+        }
     }
 
     /*
