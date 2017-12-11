@@ -25,6 +25,8 @@ class FurnitureDetailVC: UIViewController {
 
     func updateView() {
         guard let furniture = furniture else {return}
+        
+        
         if let imageData = furniture.imageData,
             let image = UIImage(data: imageData) {
             choosePhotoButton.setTitle("", for: .normal)
