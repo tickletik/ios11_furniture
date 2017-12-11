@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FurnitureDetailVC: UIViewController {
+class FurnitureDetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var furniture: Furniture?
     
@@ -41,6 +41,9 @@ class FurnitureDetailVC: UIViewController {
     }
     
     @IBAction func choosePhotoButtonTapped(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
